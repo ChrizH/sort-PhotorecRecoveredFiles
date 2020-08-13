@@ -125,5 +125,6 @@ if __name__ == "__main__":
     log("[JPG only] start event naming by timestamp")
     event_folder_naming.process_renaming(os.path.join(destination, "JPG"))
     
+    event_folder_naming.compute_stats(os.path.join(destination, "JPG"))
     log("assure max file per folder number")
     numberOfFilesPerFolderLimiter.limitFilesPerFolder(destination, maxNumberOfFilesPerFolder)

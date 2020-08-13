@@ -54,10 +54,10 @@ Now you get:
 ```
 destination
 |- 2015
-    |- 1
+    |- 1    # January
       |- 1.jpg
       |- 2.jpg
-    |- 2
+    |- 2    # February
       |- 3.jpg
       |- 4.jpg
     |- ...
@@ -65,14 +65,28 @@ destination
     |- ...
 ```
 
+#### Event based image grouping
+Images that have been taken within close proximity to each other should be stored together. 
+
+Let's say you have only images from two weekend trips within a month, then it makes sense to group those images accordingly.  
+
+```
+destination
+|- 2015
+    |- 1    # January
+        |-2015-01-10__to__01_13
+        |-2015-01-23__to__01_24
+
+````
+
+##### Adjust event distance
+
+For the case you want to reduce or increase the timespan between events, simply use the parameter -d. The default is 4:
+```python recovery.py <path to files recovered by Photorec> <destination> -d10```
+
+
 #### Keep original filenames
 
 Use the -k parameter to keep the original filenames:
 
 ```python recovery.py <path to files recovered by Photorec> <destination> -k```
-
-
-#### Adjust event distance
-
-For the case you want to reduce or increase the timespan between events, simply use the parameter -d. The default is 4:
-```python recovery.py <path to files recovered by Photorec> <destination> -d10```
